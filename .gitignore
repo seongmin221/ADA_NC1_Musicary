@@ -88,3 +88,4 @@ fastlane/test_output
 # https://github.com/johnno1962/injectionforxcode
 
 iOSInjectionProject/
+ADA_NC1_Musciary/ADA_NC1_Musciary/AuthManager.swift

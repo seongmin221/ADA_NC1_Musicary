@@ -28,7 +28,18 @@ struct RecommendationView: View {
                         VStack {
                             ZStack {
                                 LinearGradient(colors: [Color.gdColor1[0], Color.gdColor1[1], Color.gdColor1[2]], startPoint: .leading, endPoint: .trailing)
-//                                Image("recAlbumArt1")
+                                
+                                HStack {
+                                    Image("recAlbumArt1-1")
+                                        .resizable()
+                                        .frame(width: 60, height: 60)
+                                    Image("recAlbumArt1-2")
+                                        .resizable()
+                                        .frame(width: 60, height: 60)
+                                    Image("recAlbumArt1-3")
+                                        .resizable()
+                                    .frame(width: 60, height: 60)
+                                }
                             }
                             
                         }

@@ -9,15 +9,12 @@ import SwiftUI
 
 struct MainView: View {
     var body: some View {
-        ZStack{
-            Color.bgColor
-                .ignoresSafeArea()
-            VStack{
-                NavigationView {
-                    RecommendationView()
-                }
+        VStack{
+            NavigationView {
+                RecommendationView()
             }
         }
+        
     }
 }
 

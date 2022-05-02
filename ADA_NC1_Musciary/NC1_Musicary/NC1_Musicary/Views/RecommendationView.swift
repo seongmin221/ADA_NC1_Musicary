@@ -18,6 +18,7 @@ struct RecommendationView: View {
                         .font(.system(size: 24))
                         .fontWeight(.heavy)
                         .foregroundColor(Color.white)
+                        .padding(.bottom, -2)
                     Spacer()
                 }
                 ScrollView(.horizontal){
@@ -52,9 +53,7 @@ struct RecommendationView: View {
                                         .padding(.top, 5)
                                     }
                                     
-                                    
                                 }
-                                
                                 
                             }
                             .frame(width: 210, height: 124, alignment: .leading)

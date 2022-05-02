@@ -8,13 +8,18 @@
 import SwiftUI
 
 struct MainView: View {
+    var member: Member = member1
     var body: some View {
-        ZStack{
-            Color.bgColor
+        ZStack {
+            Color.black
                 .ignoresSafeArea()
             VStack{
                 NavigationView {
-                    RecommendationView()
+                    ScrollView {
+                        RecommendationView()
+                        Spacer()
+                        UserDiaryListView(member:member1)
+                    }
                 }
             }
         }

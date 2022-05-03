@@ -19,4 +19,7 @@ extension Color {
     static let gdColor2 = [Color("gradientColor2-1"), Color("gradientColor2-2")]
     
     static let moodColor = Color("moodColor")
+    
+    static let btnColor = Color("btnColor")
+    static let btnColor1 = Color("btnColor1")
 }

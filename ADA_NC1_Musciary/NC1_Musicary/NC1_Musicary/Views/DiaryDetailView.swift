@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct DiaryDetailView: View {
+    @State private var bottomSheetShown = false
+    
     var date: DiaryContentByDate
     var diaryDetail: DiaryDetail
     var body: some View {
@@ -106,7 +108,14 @@ struct DiaryDetailView: View {
                         .padding([.leading, .trailing])
                         .offset(x: 0, y: -96)
                     }
+                    BottomMenu(
+                        isOpen: self.$bottomSheetShown,
+                        maxHeight: geo.size.height * 0.3
+                    ){
+                        Text("dfd")
+                    }
                 }
+                
             }
         }
     }

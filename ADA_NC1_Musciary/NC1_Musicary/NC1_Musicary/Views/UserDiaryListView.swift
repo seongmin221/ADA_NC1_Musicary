@@ -19,13 +19,30 @@ struct UserDiaryListView: View {
     var body: some View {
         
         VStack(alignment:.leading){
-            Text("Id의 노래일기")
-                .font(.system(size: 24))
-                .fontWeight(.heavy)
-                .foregroundColor(Color.white)
-                .padding(.bottom, -1)
-                .padding(.leading, 5)
-            ScrollView(.horizontal){
+            HStack {
+                Text("Id의 노래일기")
+                    .font(.system(size: 24))
+                    .fontWeight(.heavy)
+                    .foregroundColor(Color.white)
+                    .padding(.bottom, -1)
+                
+                Spacer()
+                
+                Button(action: {
+                    
+                }){
+                    Image(systemName: "plus")
+                        .font(.system(size: 24))
+                        .foregroundColor(Color.titleColor)
+                }
+            }
+            .padding(.leading, 5)
+            .padding(.trailing, 15)
+            
+            Spacer()
+                .frame(height:10)
+            
+            ScrollView(.horizontal, showsIndicators: false){
                 HStack {
                     ForEach(member.diaryContent){ date in
                         VStack(alignment:.leading){
@@ -44,7 +61,7 @@ struct UserDiaryListView: View {
                                                 .resizable()
                                                 .frame(width: 154, height: 154)
                                                 .cornerRadius(5)
-                                            VStack(alignment:.leading){
+                                            VStack(alignment: .leading){
                                                 Text(detail.music)
                                                     .foregroundColor(.white)
                                                     .font(.system(size: 16))
@@ -59,6 +76,7 @@ struct UserDiaryListView: View {
                                                     .font(.system(size:12))
                                                     .fontWeight(.medium)
                                                     .opacity(0.75)
+                                                    .multilineTextAlignment(.leading)
                                             }
                                             .padding(.leading, 2)
                                         }

@@ -9,10 +9,10 @@ import SwiftUI
 
 fileprivate enum Constants {
     static let radius: CGFloat = 16
-    static let indicatorHeight: CGFloat = 6
+    static let indicatorHeight: CGFloat = 3
     static let indicatorWidth: CGFloat = 60
     static let snapRatio: CGFloat = 0.25
-    static let minHeightRatio: CGFloat = 0.3
+    static let minHeightRatio: CGFloat = 0.12
 }
 
 struct BottomMenu<Content: View>: View {
@@ -47,6 +47,10 @@ struct BottomMenu<Content: View>: View {
     var body: some View {
         GeometryReader { geo in
             VStack(spacing: 0) {
+                RoundedRectangle(cornerRadius: 2.5)
+                    .foregroundColor(.white.opacity(0.5))
+                    .frame(width: 100, height: 5)
+                    .padding(.top, 10)
                 self.indicator.padding()
                 self.Content
             }

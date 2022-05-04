@@ -26,15 +26,27 @@ struct DiaryDetailView: View {
                                 .aspectRatio(contentMode: .fit)
                                 .ignoresSafeArea()
                                 .overlay(
-                                    RoundedRectangle(cornerSize: CGSize(width:50, height:50))
+                                    Rectangle()
                                         .opacity(0.3)
                                         .ignoresSafeArea()
-                                        .shadow(color: Color.black, radius: 5, x: 10, y: 10)
+                                        .foregroundColor(Color.black)
                                         .frame(width: geo.size.width, height: geo.size.width)
-                                    
                                 )
-                                .blur(radius: 3)
-                            
+                                .blur(radius:3)
+//                            Image(diaryDetail.albumArtName)
+//                                .resizable()
+//                                .aspectRatio(contentMode: .fit)
+//                                .ignoresSafeArea()
+//                                .overlay(
+//                                    RoundedRectangle(cornerSize: CGSize(width:50, height:50))
+//                                        .opacity(0.3)
+//                                        .ignoresSafeArea()
+//                                        .shadow(color: Color.black, radius: 5, x: 10, y: 10)
+//                                        .frame(width: geo.size.width, height: geo.size.width)
+//
+//                                )
+//                                .blur(radius: 3)
+//
                             HStack {
                                 Image(diaryDetail.albumArtName)
                                     .resizable()
@@ -99,6 +111,7 @@ struct DiaryDetailView: View {
                                     Text(mood)
                                         .font(.system(size: 14))
                                         .padding(6)
+                                        .padding([.leading, .trailing], 3)
                                         .foregroundColor(.white)
                                         .background(Color.moodColor)
                                         .clipShape(Capsule())
@@ -134,6 +147,6 @@ struct DiaryDetailView: View {
 
 struct DiaryDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        DiaryDetailView(date: member1.diaryContent[0], diaryDetail: member1.diaryContent[0].diaryDetail[1])
+        DiaryDetailView(date: member1.diaryContent[0], diaryDetail: member1.diaryContent[0].diaryDetail[0])
     }
 }

@@ -22,4 +22,6 @@ extension Color {
     
     static let btnColor = Color("btnColor")
     static let btnColor1 = Color("btnColor1")
+    
+    static let menuBarColor = Color("menuBarColor")
 }

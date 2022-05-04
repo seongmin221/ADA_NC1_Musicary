@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct DiaryDetailView: View {
+    
+    @State private var bottomSheetShown = false
+    
     var date: DiaryContentByDate
     var diaryDetail: DiaryDetail
     var body: some View {
@@ -22,7 +25,6 @@ struct DiaryDetailView: View {
                                 .resizable()
                                 .aspectRatio(contentMode: .fit)
                                 .ignoresSafeArea()
-                                .blur(radius: 3)
                                 .overlay(
                                     RoundedRectangle(cornerSize: CGSize(width:50, height:50))
                                         .opacity(0.3)
@@ -31,6 +33,7 @@ struct DiaryDetailView: View {
                                         .frame(width: geo.size.width, height: geo.size.width)
                                     
                                 )
+                                .blur(radius: 3)
                             
                             HStack {
                                 Image(diaryDetail.albumArtName)
@@ -71,19 +74,19 @@ struct DiaryDetailView: View {
                         
                         VStack(alignment: .leading){
                             Spacer()
-                                .frame(height: 40)
+                                .frame(height: 30)
                             
                             Text("\(date.uploadedDate[0]).\(date.uploadedDate[1]).\(date.uploadedDate[2])")
                                 .foregroundColor(.white)
                                 .font(.system(size: 15))
-                                .fontWeight(.light)
+                                .fontWeight(.medium)
                                 .opacity(0.8)
                             
                             Spacer()
                                 .frame(height:20)
                             
                             Text(diaryDetail.content)
-                                .fontWeight(.semibold)
+                                .fontWeight(.light)
                                 .foregroundColor(.white)
                                 .opacity(0.7)
                                 .font(.system(size: 15))
@@ -94,7 +97,7 @@ struct DiaryDetailView: View {
                             HStack{
                                 ForEach(diaryDetail.musicMood, id:\.self){ mood in
                                     Text(mood)
-                                        .font(.system(size: 12))
+                                        .font(.system(size: 14))
                                         .padding(6)
                                         .foregroundColor(.white)
                                         .background(Color.moodColor)
@@ -106,9 +109,26 @@ struct DiaryDetailView: View {
                         .padding([.leading, .trailing])
                         .offset(x: 0, y: -96)
                     }
+                    .onTapGesture {
+                        if bottomSheetShown == false {
+                            return
+                        } else {
+                            bottomSheetShown = false
+                        }
+                    }
+                    BottomMenu(
+                        isOpen: self.$bottomSheetShown,
+                        maxHeight: geo.size.height * 0.7
+                    ){
+                        VStack(alignment: .leading) {
+                            CommentView(diaryDetail: diaryDetail)
+                        }
+                    }
                 }
+                
             }
         }
+        
     }
 }
 

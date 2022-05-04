@@ -20,14 +20,28 @@ struct RecommendationView: View {
                     .padding(.leading, 5)
                 Spacer()
             }
-            ScrollView(.horizontal){
+            Spacer()
+                .frame(height:10)
+            ScrollView(.horizontal, showsIndicators: false){
                 HStack {
-                    NavigationLink(destination: MainView()){
+                    NavigationLink(destination: {
+                        ZStack {
+                            Color.bgColor
+                                .ignoresSafeArea()
+                            VStack{
+                                Image(systemName: "xmark.octagon.fill")
+                                    .font(.system(size: 50))
+                                    .foregroundColor(.white)
+                                Text("Not Developed Yet!")
+                                    .foregroundColor(.white)
+                            }
+                        }
+                    }){
                         VStack {
                             ZStack {
                                 LinearGradient(colors: [Color.gdColor1[0], Color.gdColor1[1], Color.gdColor1[2]], startPoint: .leading, endPoint: .trailing)
                                 
-                                VStack {
+                                VStack (alignment: .leading){
                                     ZStack {
                                         Image("recAlbumArt1-1")
                                             .resizable()
@@ -60,11 +74,23 @@ struct RecommendationView: View {
                         
                     }
                     
-                    NavigationLink(destination: MainView()){
+                    NavigationLink(destination: {
+                        ZStack {
+                            Color.bgColor
+                                .ignoresSafeArea()
+                            VStack{
+                                Image(systemName: "xmark.octagon.fill")
+                                    .font(.system(size: 50))
+                                    .foregroundColor(.white)
+                                Text("Not Developed Yet!")
+                                    .foregroundColor(.white)
+                            }
+                        }
+                    }){
                         VStack {
                             ZStack {
                                 LinearGradient(colors: [Color.gdColor2[0], Color.gdColor2[1]], startPoint: .leading, endPoint: .trailing)
-                                VStack {
+                                VStack (alignment: .leading){
                                     ZStack {
                                         Image("recAlbumArt2-2")
                                             .resizable()

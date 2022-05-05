@@ -21,13 +21,22 @@ struct CommentView: View {
                     .foregroundColor(.white)
                 Spacer()
             }
+            .padding(.bottom, 25)
                 
             if (diaryDetail.comments != nil) {
-                ForEach(diaryDetail.comments!, id:\.self) { comment in
-                    Text(comment)
-                        .padding(.bottom, 10)
-                        .padding([.leading, .trailing], 15)
-                        .foregroundColor(.white)
+                VStack (alignment: .leading){
+                    ForEach(diaryDetail.comments!, id:\.self) { comment in
+                        HStack {
+                            Image(systemName: "person.circle")
+                                .font(.system(size: 30))
+                                .foregroundColor(Color.titleColor)
+                            Text(comment)
+                                .padding(.bottom, 10)
+                                .padding([.leading, .trailing], 15)
+                                .foregroundColor(.black)
+                                
+                        }
+                    }
                 }
             } else {
                 Text("댓글을 달아보세요!")
@@ -38,6 +47,6 @@ struct CommentView: View {
 
 struct CommentView_Previews: PreviewProvider {
     static var previews: some View {
-        CommentView(diaryDetail: member1.diaryContent[0].diaryDetail[1])
+        CommentView(diaryDetail: member1.diaryContent[0].diaryDetail[0])
     }
 }

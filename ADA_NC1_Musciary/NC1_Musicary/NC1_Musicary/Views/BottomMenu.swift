@@ -9,7 +9,7 @@ import SwiftUI
 
 fileprivate enum Constants {
     static let radius: CGFloat = 16
-    static let indicatorHeight: CGFloat = 3
+    static let indicatorHeight: CGFloat = 1
     static let indicatorWidth: CGFloat = 60
     static let snapRatio: CGFloat = 0.25
     static let minHeightRatio: CGFloat = 0.12
@@ -50,8 +50,8 @@ struct BottomMenu<Content: View>: View {
                 RoundedRectangle(cornerRadius: 2.5)
                     .foregroundColor(.white.opacity(0.5))
                     .frame(width: 100, height: 5)
-                    .padding(.top, 10)
-                self.indicator.padding()
+                    .padding(.top, 8)
+                self.indicator.padding(10)
                 self.Content
             }
             .frame(width: geo.size.width, height: self.maxHeight, alignment: .top)

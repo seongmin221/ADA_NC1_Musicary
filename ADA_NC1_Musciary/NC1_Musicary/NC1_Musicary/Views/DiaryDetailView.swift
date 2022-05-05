@@ -20,7 +20,7 @@ struct DiaryDetailView: View {
             VStack{
                 GeometryReader{ geo in
                     VStack (alignment: .leading){
-                        ZStack (alignment:.bottom){
+                        ZStack (alignment:.center){
                             Image(diaryDetail.albumArtName)
                                 .resizable()
                                 .aspectRatio(contentMode: .fit)
@@ -33,20 +33,15 @@ struct DiaryDetailView: View {
                                         .frame(width: geo.size.width, height: geo.size.width)
                                 )
                                 .blur(radius:3)
-//                            Image(diaryDetail.albumArtName)
-//                                .resizable()
-//                                .aspectRatio(contentMode: .fit)
-//                                .ignoresSafeArea()
-//                                .overlay(
-//                                    RoundedRectangle(cornerSize: CGSize(width:50, height:50))
-//                                        .opacity(0.3)
-//                                        .ignoresSafeArea()
-//                                        .shadow(color: Color.black, radius: 5, x: 10, y: 10)
-//                                        .frame(width: geo.size.width, height: geo.size.width)
-//
-//                                )
-//                                .blur(radius: 3)
-//
+                            MusicPlayer(musicFileName: diaryDetail.musicFileName)
+                                .offset(x: 0, y: -128)
+//                                .position(x: geo.size.width/2, y: geo.size.width/2)
+                                
+                        }
+                        .frame(width: geo.size.width, height: geo.size.width)
+                        
+                        VStack(alignment: .leading){
+                            
                             HStack {
                                 Image(diaryDetail.albumArtName)
                                     .resizable()
@@ -61,7 +56,6 @@ struct DiaryDetailView: View {
                                             .blur(radius:4)
                                             .opacity(0.7)
                                     )
-                                    .padding(.leading)
                                 
                                 VStack(alignment: .leading){
                                     Text(diaryDetail.music)
@@ -80,11 +74,8 @@ struct DiaryDetailView: View {
                                 Spacer()
                             }
                             .padding(.bottom, 10)
-                            .offset(x: 0, y: -96)
-                        }
-                        .frame(width: geo.size.width, height: geo.size.width)
-                        
-                        VStack(alignment: .leading){
+                            
+                            
                             Spacer()
                                 .frame(height: 30)
                             
@@ -120,7 +111,7 @@ struct DiaryDetailView: View {
                             }
                         }
                         .padding([.leading, .trailing])
-                        .offset(x: 0, y: -96)
+                        .offset(x: 0, y: -195.5)
                     }
                     .onTapGesture {
                         if bottomSheetShown == false {

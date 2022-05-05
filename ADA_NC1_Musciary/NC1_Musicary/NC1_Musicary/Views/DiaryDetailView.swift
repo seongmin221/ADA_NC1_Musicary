@@ -93,6 +93,7 @@ struct DiaryDetailView: View {
                                 .foregroundColor(.white)
                                 .opacity(0.7)
                                 .font(.system(size: 15))
+                                .fixedSize(horizontal: false, vertical: true)
                             
                             Spacer()
                                 .frame(height:20)
@@ -119,6 +120,7 @@ struct DiaryDetailView: View {
                         } else {
                             bottomSheetShown = false
                         }
+                        
                     }
                     BottomMenu(
                         isOpen: self.$bottomSheetShown,

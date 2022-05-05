@@ -15,6 +15,7 @@
 		3E958C14281A8182003FD543 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3E958C13281A8182003FD543 /* Preview Assets.xcassets */; };
 		3E958C1B281A8306003FD543 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E958C1A281A8306003FD543 /* Extensions.swift */; };
 		3E958C21281A83C5003FD543 /* RecommendationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E958C20281A83C5003FD543 /* RecommendationView.swift */; };
+		3EC8E57F2823A10300795464 /* Don't Say No.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3EC8E57E2823A10300795464 /* Don't Say No.mp3 */; };
 		3ED90F542822D39C008221CC /* MusicPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ED90F532822D39C008221CC /* MusicPlayer.swift */; };
 		3ED90F5C2822E15F008221CC /* 스토커.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3ED90F592822E15F008221CC /* 스토커.mp3 */; };
 		3ED90F5D2822E15F008221CC /* Electricity.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3ED90F5A2822E15F008221CC /* Electricity.mp3 */; };
@@ -36,6 +37,7 @@
 		3E958C13281A8182003FD543 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		3E958C1A281A8306003FD543 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		3E958C20281A83C5003FD543 /* RecommendationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendationView.swift; sourceTree = "<group>"; };
+		3EC8E57E2823A10300795464 /* Don't Say No.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Don't Say No.mp3"; sourceTree = "<group>"; };
 		3ED90F532822D39C008221CC /* MusicPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicPlayer.swift; sourceTree = "<group>"; };
 		3ED90F592822E15F008221CC /* 스토커.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "스토커.mp3"; sourceTree = "<group>"; };
 		3ED90F5A2822E15F008221CC /* Electricity.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Electricity.mp3; sourceTree = "<group>"; };
@@ -113,6 +115,7 @@
 		3ED90F492822C4F0008221CC /* Music */ = {
 			isa = PBXGroup;
 			children = (
+				3EC8E57E2823A10300795464 /* Don't Say No.mp3 */,
 				3ED90F592822E15F008221CC /* 스토커.mp3 */,
 				3ED90F5A2822E15F008221CC /* Electricity.mp3 */,
 				3ED90F5B2822E15F008221CC /* Nothing.mp3 */,
@@ -202,6 +205,7 @@
 				3ED90F5E2822E15F008221CC /* Nothing.mp3 in Resources */,
 				3ED90F5D2822E15F008221CC /* Electricity.mp3 in Resources */,
 				3E958C11281A8182003FD543 /* Assets.xcassets in Resources */,
+				3EC8E57F2823A10300795464 /* Don't Say No.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
